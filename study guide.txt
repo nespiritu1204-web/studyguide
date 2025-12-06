@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MATH 11 Study Guide</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f9fc;
+      color: #222;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    h1, h2, h3, h4 {
+      color: #1f3b70;
+      margin-top: 1.4em;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.2em;
+    }
+    h1 + p.subtitle {
+      text-align: center;
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      border: 1px solid #e1e6f0;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #556485;
+      background: #e5ecff;
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin-bottom: 6px;
+    }
+    code, pre {
+      font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      background: #f1f4fb;
+    }
+    code {
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    pre {
+      padding: 8px 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid #e0e6f5;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .cheat {
+      background: #10172f;
+      color: #f9fafb;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 24px 0;
+    }
+    .cheat h2, .cheat h3 {
+      color: #e5edff;
+    }
+    .cheat code, .cheat pre {
+      background: #020617;
+      border-color: #1f2937;
+      color: #f9fafb;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 4px 0 8px;
+    }
+    .pill {
+      font-size: 11px;
+      background: #e5ecff;
+      color: #1f3b70;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #dde3f0;
+      margin: 24px 0;
+    }
+    .mini-heading {
+      font-weight: 600;
+      font-size: 14px;
+      color: #374151;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 16px 12px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>MATH 11 Study Guide</h1>
+    <p class="subtitle">Confidence Intervals, Hypothesis Tests, Two-Sample Tests, Matched Pairs, ANOVA, Chi-Square</p>
+
+    <!-- PART 1: Academic Study Guide -->
+    <div class="card">
+      <div class="tag">Part 1 · Academic Guide</div>
+      <h2>1. Confidence Intervals (CI)</h2>
+
+      <h3>1.1 CI for One Mean (sigma unknown)</h3>
+      <p>Use a t-interval when the population standard deviation is unknown (which is basically always in real life).</p>
+      <p class="mini-heading">Formula:</p>
+      <pre>CI = xbar +/- t_star * ( s / sqrt(n) )</pre>
+      <p class="mini-heading">Where:</p>
+      <ul>
+        <li><code>xbar</code> = sample mean</li>
+        <li><code>s</code> = sample standard deviation</li>
+        <li><code>n</code> = sample size</li>
+        <li><code>t_star</code> = critical t-value from table or calculator</li>
+      </ul>
+      <p class="mini-heading">Conditions:</p>
+      <ul>
+        <li>Random sample</li>
+        <li>Population approximately normal OR <code>n</code> is at least about 30</li>
+      </ul>
+
+      <h3>1.2 CI for One Proportion</h3>
+      <p class="mini-heading">Formula:</p>
+      <pre>CI = p_hat +/- z_star * sqrt( p_hat * (1 - p_hat) / n )</pre>
+      <p class="mini-heading">Where:</p>
+      <ul>
+        <li><code>p_hat = x / n</code> = sample proportion</li>
+        <li><code>z_star</code> = critical z-value (for example, 1.645 for 90%, 1.96 for 95%)</li>
+      </ul>
+      <p class="mini-heading">Conditions:</p>
+      <ul>
+        <li>Random sample</li>
+        <li><code>n * p_hat &gt;= 10</code> and <code>n * (1 - p_hat) &gt;= 10</code></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. One-Sample Hypothesis Tests</h2>
+
+      <h3>2.1 Test for a Mean</h3>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>t = ( xbar - mu_0 ) / ( s / sqrt(n) )</pre>
+      <p class="mini-heading">Hypotheses:</p>
+      <ul>
+        <li>Right-tailed: <code>H0: mu = mu_0</code>, <code>Ha: mu &gt; mu_0</code></li>
+        <li>Left-tailed: <code>H0: mu = mu_0</code>, <code>Ha: mu &lt; mu_0</code></li>
+        <li>Two-tailed: <code>H0: mu = mu_0</code>, <code>Ha: mu != mu_0</code></li>
+      </ul>
+
+      <h3>2.2 Test for a Proportion</h3>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>z = ( p_hat - p_0 ) / sqrt( p_0 * (1 - p_0) / n )</pre>
+      <p>Here <code>p_0</code> is the null (hypothesized) population proportion.</p>
+      <p class="mini-heading">Decision rule (for any test):</p>
+      <ul>
+        <li>If <code>p_value &lt;= alpha</code>, reject <code>H0</code></li>
+        <li>If <code>p_value &gt; alpha</code>, fail to reject <code>H0</code></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. Two-Sample Procedures</h2>
+
+      <h3>3.1 Two Independent Means</h3>
+      <p>Used when comparing mean values from two separate, unrelated groups.</p>
+      <p class="mini-heading">Standard error:</p>
+      <pre>SE = sqrt( s1^2 / n1 + s2^2 / n2 )</pre>
+      <p class="mini-heading">CI for difference:</p>
+      <pre>CI = ( xbar_1 - xbar_2 ) +/- t_star * SE</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>t = ( (xbar_1 - xbar_2) - 0 ) / SE</pre>
+
+      <h3>3.2 Two Proportions</h3>
+      <p>Used when comparing proportions from two independent groups.</p>
+      <p class="mini-heading">Pooled proportion (for tests):</p>
+      <pre>p_pooled = ( x1 + x2 ) / ( n1 + n2 )</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>z = ( p_hat1 - p_hat2 ) / sqrt( p_pooled * (1 - p_pooled) * ( 1/n1 + 1/n2 ) )</pre>
+      <p class="mini-heading">CI for difference in proportions (no pooling):</p>
+      <pre>CI = ( p_hat1 - p_hat2 )
+     +/- z_star * sqrt( p_hat1*(1 - p_hat1)/n1
+                      + p_hat2*(1 - p_hat2)/n2 )</pre>
+    </div>
+
+    <div class="card">
+      <h2>4. Matched Pairs (Paired Data)</h2>
+      <p>Used when the same individuals are measured twice (before/after) or when units are naturally paired.</p>
+      <p class="mini-heading">Step 1: Create difference variable</p>
+      <pre>d = after - before</pre>
+      <p class="mini-heading">Compute:</p>
+      <ul>
+        <li><code>dbar</code> = mean of the differences</li>
+        <li><code>s_d</code> = standard deviation of the differences</li>
+      </ul>
+      <p class="mini-heading">CI for mean difference:</p>
+      <pre>CI = dbar +/- t_star * ( s_d / sqrt(n) )</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>t = dbar / ( s_d / sqrt(n) )</pre>
+    </div>
+
+    <div class="card">
+      <h2>5. ANOVA (Analysis of Variance)</h2>
+      <p>Used to compare the means of 3 or more populations.</p>
+      <p class="mini-heading">Hypotheses:</p>
+      <ul>
+        <li><code>H0: mu1 = mu2 = mu3 = ...</code></li>
+        <li><code>Ha:</code> at least one mean is different</li>
+      </ul>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>F = MS_between / MS_within</pre>
+      <p>If <code>F</code> is large and the <code>p_value &lt; alpha</code>, reject <code>H0</code>; this tells you not all means are equal.</p>
+      <p>ANOVA does NOT tell you exactly which groups differ; it only tells you that at least one mean is different.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Chi-Square Tests</h2>
+
+      <h3>6.1 Chi-Square Goodness of Fit</h3>
+      <p>Used for one categorical variable to compare observed counts to expected counts.</p>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>chi_square = sum( ( O - E )^2 / E )</pre>
+      <p class="mini-heading">Degrees of freedom:</p>
+      <pre>df = k - 1    (k = number of categories)</pre>
+
+      <h3>6.2 Chi-Square Test of Independence</h3>
+      <p>Used for two categorical variables arranged in a two-way table.</p>
+      <p class="mini-heading">Expected count for cell (i, j):</p>
+      <pre>E_ij = ( row_total_i * column_total_j ) / grand_total</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>chi_square = sum( ( O_ij - E_ij )^2 / E_ij )</pre>
+      <p class="mini-heading">Degrees of freedom:</p>
+      <pre>df = (r - 1) * (c - 1)</pre>
+    </div>
+
+    <hr>
+
+    <!-- PART 2: Girlfriend-Friendly Explanation -->
+    <div class="card">
+      <div class="tag">Part 2 · Easy-Read Version</div>
+      <h2>7. Gentle Overview (For Fast Studying)</h2>
+
+      <h3>7.1 Confidence Intervals</h3>
+      <p>A confidence interval gives a range of values that are believable for the true population value.</p>
+      <ul>
+        <li>For a mean: use <code>xbar +/- t_star * (s / sqrt(n))</code></li>
+        <li>For a proportion: use <code>p_hat +/- z_star * sqrt( p_hat*(1 - p_hat)/n )</code></li>
+      </ul>
+
+      <h3>7.2 Hypothesis Tests</h3>
+      <p>Basic steps:</p>
+      <ol>
+        <li>Write <code>H0</code> (null) and <code>Ha</code> (alternative).</li>
+        <li>Compute the test statistic (<code>t</code> or <code>z</code>).</li>
+        <li>Find the p-value.</li>
+        <li>Compare p-value to alpha (e.g., 0.05).</li>
+        <li>Write a conclusion in words.</li>
+      </ol>
+
+      <h3>7.3 Two-Sample vs Matched Pairs</h3>
+      <ul>
+        <li><strong>Two-sample:</strong> different individuals in each group.</li>
+        <li><strong>Matched pairs:</strong> same people measured twice, or naturally paired pairs. Use differences <code>d = after - before</code>.</li>
+      </ul>
+
+      <h3>7.4 ANOVA and Chi-Square</h3>
+      <ul>
+        <li><strong>ANOVA:</strong> compares 3 or more means (numeric outcome).</li>
+        <li><strong>Chi-square:</strong> works with counts (categorical data) to compare distributions or check independence.</li>
+      </ul>
+    </div>
+
+    <!-- PART 3: Cheat Sheet -->
+    <div class="cheat">
+      <div class="tag" style="background:#1e293b;color:#e5edff;border:none;">Part 3 · Cheat Sheet</div>
+      <h2>8. The One-Page Cheat Sheet</h2>
+
+      <div class="pill-list">
+        <span class="pill">CI</span>
+        <span class="pill">1-sample t</span>
+        <span class="pill">2-sample t</span>
+        <span class="pill">2-prop z</span>
+        <span class="pill">Matched pairs</span>
+        <span class="pill">ANOVA</span>
+        <span class="pill">Chi-square</span>
+      </div>
+
+      <h3>8.1 Core Formulas</h3>
+      <pre>One mean (t):
+CI = xbar +/- t_star * ( s / sqrt(n) )
+t  = ( xbar - mu_0 ) / ( s / sqrt(n) )
+
+One proportion (z):
+CI = p_hat +/- z_star * sqrt( p_hat * (1 - p_hat) / n )
+z  = ( p_hat - p_0 ) / sqrt( p_0 * (1 - p_0) / n )
+
+Two means (independent, t):
+SE = sqrt( s1^2 / n1 + s2^2 / n2 )
+CI = ( xbar_1 - xbar_2 ) +/- t_star * SE
+
+Two proportions (z):
+p_pooled = ( x1 + x2 ) / ( n1 + n2 )
+z = ( p_hat1 - p_hat2 ) /
+    sqrt( p_pooled*(1 - p_pooled)*(1/n1 + 1/n2) )
+
+Matched pairs (t on differences):
+CI = dbar +/- t_star * ( s_d / sqrt(n) )
+t  = dbar / ( s_d / sqrt(n) )
+
+ANOVA:
+F = MS_between / MS_within
+
+Chi-square:
+chi_square = sum( ( O - E )^2 / E )</pre>
+
+      <h3>8.2 Which Test Do I Use?</h3>
+      <ul>
+        <li>One mean → 1-sample t</li>
+        <li>One proportion → 1-sample z for p</li>
+        <li>Two independent means → 2-sample t</li>
+        <li>Two proportions → 2-sample z for p</li>
+        <li>Same people twice → matched pairs t</li>
+        <li>3+ means → ANOVA</li>
+        <li>Counts, one categorical variable → chi-square GOF</li>
+        <li>Counts, two categorical variables → chi-square independence</li>
+      </ul>
+    </div>
+
+    <!-- PART 4: Practice Exam -->
+    <div class="card">
+      <div class="tag">Part 4 · Practice Exam</div>
+      <h2>9. Practice Exam</h2>
+      <ol>
+        <li>CI for mean: <code>n = 25</code>, <code>xbar = 3.4</code>, <code>s = 1.2</code>, 95 percent confidence.</li>
+        <li>Test <code>H0: mu = 3</code> vs <code>Ha: mu &gt; 3</code> using the data from question 1 at <code>alpha = 0.05</code>.</li>
+        <li>CI for a proportion: 54 out of 200 people prefer online classes. Construct a 90 percent CI for the true proportion.</li>
+        <li>Two-sample t-test: group 1 has <code>n1 = 16</code>, <code>xbar1 = 78</code>, <code>s1 = 10</code>; group 2 has <code>n2 = 20</code>, <code>xbar2 = 70</code>, <code>s2 = 8</code>. Test <code>H0: mu1 = mu2</code> vs <code>Ha: mu1 &gt; mu2</code> at <code>alpha = 0.05</code>.</li>
+        <li>Two proportions: city 1 has 30 supporters out of 100; city 2 has 45 supporters out of 120. Test <code>H0: p1 = p2</code> vs <code>Ha: p1 != p2</code> at <code>alpha = 0.05</code>.</li>
+        <li>Matched pairs: ten patients have blood pressure measured before and after a program. The differences (after - before) have <code>dbar = -5.2</code>, <code>s_d = 4.0</code>. Test at <code>alpha = 0.01</code> if the program reduces blood pressure (<code>Ha: mu_d &lt; 0</code>).</li>
+        <li>ANOVA output gives <code>F = 5.8</code> and <code>p_value = 0.006</code> for 3 groups at <code>alpha = 0.05</code>. What do you conclude?</li>
+        <li>Chi-square GOF: a die is rolled 120 times and the counts are 16, 17, 18, 25, 22, 22 for faces 1 through 6. Test if the die is fair at <code>alpha = 0.05</code>.</li>
+        <li>Chi-square independence: explain how to compute the expected counts in a 2 by 3 table.</li>
+        <li>Identify the correct test for each:
+          <ul>
+            <li>(a) Comparing average GPA of business majors vs non-business majors.</li>
+            <li>(b) Testing if color preference (red, blue, green) is the same for men and women.</li>
+            <li>(c) Testing if average sleep hours changed for the same students before and after a schedule change.</li>
+            <li>(d) Testing if the true proportion of students who own a car is different from 0.6.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <!-- PART 5: Answer Key -->
+    <div class="card">
+      <div class="tag">Part 5 · Answer Key (Sketch)</div>
+      <h2>10. Answer Key (Outline)</h2>
+      <ol>
+        <li>CI for mean: approximately (2.90, 3.90).</li>
+        <li>t approximately 1.67, p-value about 0.055; fail to reject H0 at alpha 0.05.</li>
+        <li>CI for proportion: approximately (0.218, 0.322).</li>
+        <li>t approximately 2.60, p-value around 0.01; reject H0, evidence that group 1 mean is greater.</li>
+        <li>z approximately -1.17, p-value about 0.24; fail to reject H0.</li>
+        <li>t approximately -4.11, very small p-value; reject H0, strong evidence the program reduces blood pressure.</li>
+        <li>p-value 0.006 &lt; 0.05; reject H0; conclude not all means are equal (at least one group mean differs).</li>
+        <li>Expected count for each face is 120 / 6 = 20. chi_square is about 3.10, which is less than the critical value for df = 5, so fail to reject H0 (no evidence the die is unfair).</li>
+        <li>Use <code>E_ij = ( row_total_i * column_total_j ) / grand_total</code> for each cell, then plug into the chi-square formula.</li>
+        <li>
+          (a) Two-sample t test for means<br>
+          (b) Chi-square test of independence<br>
+          (c) Matched pairs t test<br>
+          (d) One-sample z test for proportion
+        </li>
+      </ol>
+    </div>
+
+    <p style="text-align:center; font-size:12px; color:#6b7280; margin-top:32px;">
+      End of Study Guide · MATH 11
+    </p>
+  </div>
+</body>
+</html>
