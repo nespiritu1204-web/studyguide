@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MATH 11 Study Guide with MathJax</title>
+
+<!-- Load MathJax (renders real math formulas) -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async 
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    background: #f7f9fc;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    color: #1f3b70;
+  }
+  .card {
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+</style>
+</head>
+
+<body>
+
+<h1>MATH 11 Study Guide</h1>
+
+<div class="card">
+  <h2>Confidence Intervals</h2>
+
+  <h3>CI for a Mean (sigma unknown)</h3>
+  <p>
+    \[
+    \text{CI} = \bar{x} \pm t^\* \left( \frac{s}{\sqrt{n}} \right)
+    \]
+  </p>
+
+  <h3>CI for a Proportion</h3>
+  <p>
+    \[
+    \hat{p} \pm z^\* \sqrt{ \frac{\hat{p}(1-\hat{p})}{n} }
+    \]
+  </p>
+</div>
+
+<div class="card">
+  <h2>1-Sample Hypothesis Tests</h2>
+
+  <h3>Mean Test Statistic</h3>
+  <p>
+    \[
+    t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}
+    \]
+  </p>
+
+  <h3>Proportion Test Statistic</h3>
+  <p>
+    \[
+    z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}
+    \]
+  </p>
+</div>
+
+<div class="card">
+  <h2>Two-Sample Tests</h2>
+
+  <h3>Difference of Two Means</h3>
+  <p>
+    \[
+    (\bar{x}_1 - \bar{x}_2) \pm t^\*
+    \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} }
+    \]
+  </p>
+
+  <h3>Difference of Two Proportions</h3>
+  <p>
+    \[
+    \hat{p}_1 - \hat{p}_2 \pm z^\*
+    \sqrt{
+      \frac{\hat{p}_1(1-\hat{p}_1)}{n_1}
+      +
+      \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}
+    }
+    \]
+  </p>
+
+  <h3>Pooled Test Statistic</h3>
+  <p>
+    \[
+    p_{\text{pooled}} = \frac{x_1 + x_2}{n_1 + n_2}
+    \]
+    \[
+    z = \frac{(\hat{p}_1 - \hat{p}_2)}
+    {\sqrt{p_{\text{pooled}}(1-p_{\text{pooled}})(1/n_1 + 1/n_2)}}
+    \]
+  </p>
+</div>
+
+<div class="card">
+  <h2>Matched Pairs</h2>
+  <p>
+    Differences: \( d = \text{after} - \text{before} \)
+  </p>
+
+  <h3>CI</h3>
+  <p>
+    \[
+    \bar{d} \pm t^\*
+    \left( \frac{s_d}{\sqrt{n}} \right)
+    \]
+  </p>
+
+  <h3>Test Statistic</h3>
+  <p>
+    \[
+    t = \frac{\bar{d}}{s_d/\sqrt{n}}
+    \]
+  </p>
+</div>
+
+<div class="card">
+  <h2>ANOVA F Statistic</h2>
+  <p>
+    \[
+    F = \frac{MS_{\text{between}}}{MS_{\text{within}}}
+    \]
+  </p>
+</div>
+
+<div class="card">
+  <h2>Chi-Square Tests</h2>
+
+  <h3>Goodness of Fit</h3>
+  <p>
+    \[
+    \chi^2 = \sum \frac{(O - E)^2}{E}
+    \]
+  </p>
+
+  <h3>Expected Counts (Independence)</h3>
+  <p>
+    \[
+    E_{ij} = \frac{(\text{row total})(\text{column total})}{\text{grand total}}
+    \]
+  </p>
+</div>
+
+</body>
+</html>
