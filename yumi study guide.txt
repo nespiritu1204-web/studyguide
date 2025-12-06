@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MATH 11 Full Study Pack</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f9fc;
+      color: #111827;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px 12px 40px;
+    }
+    .wrapper {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4 {
+      color: #1f3b70;
+      margin-top: 1.2em;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.2em;
+    }
+    .subtitle {
+      text-align: center;
+      color: #4b5563;
+      margin-top: 0;
+      margin-bottom: 1.6em;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      border: 1px solid #e1e6f0;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #556485;
+      background: #e5ecff;
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin-bottom: 6px;
+    }
+    code, pre {
+      font-family: Menlo, Consolas, monospace;
+      font-size: 13px;
+      background: #f1f4fb;
+    }
+    pre {
+      padding: 8px 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid #e0e6f5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .mini-heading {
+      font-weight: 600;
+      font-size: 14px;
+      color: #374151;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    .cheat {
+      background: #020617;
+      color: #f9fafb;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 24px 0;
+    }
+    .cheat h2, .cheat h3 {
+      color: #e5edff;
+    }
+    .cheat code, .cheat pre {
+      background: #020617;
+      border-color: #1f2937;
+      color: #f9fafb;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #dde3f0;
+      margin: 24px 0;
+    }
+    details {
+      background: #f9fafb;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      padding: 8px 10px;
+      margin-top: 8px;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #1f2933;
+    }
+    .tips {
+      background: #ecfdf3;
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>MATH 11 – Full Night-Before Study Pack</h1>
+    <p class="subtitle">Confidence Intervals · Hypothesis Tests · Two-Sample Tests · Matched Pairs · ANOVA · Chi-Square</p>
+
+    <!-- PART 0: HOW TO USE -->
+    <div class="card">
+      <div class="tag">Start Here</div>
+      <h2>0. How to Use This Tonight</h2>
+      <ol>
+        <li>Read the <strong>Thorough Study Guide</strong> (Sections 1–6) once, not too slowly.</li>
+        <li>Scan the <strong>Condensed Guide + Cheat Sheet</strong> (Sections 7–8).</li>
+        <li>Do the <strong>Mini Quizzes</strong> (Section 9), then open answers.</li>
+        <li>Do the <strong>Practice Exam</strong> (Section 10) timed (30–40 minutes).</li>
+        <li>Check the <strong>Answer Key</strong> (Section 11).</li>
+        <li>End your night on the <strong>Cheat Sheet + Test-Selection Guide</strong>.</li>
+      </ol>
+    </div>
+
+    <!-- PART 1: THOROUGH STUDY GUIDE -->
+    <div class="card">
+      <div class="tag">Part 1 · Thorough Study Guide</div>
+      <h2>1. Confidence Intervals (CI)</h2>
+
+      <h3>1.1 CI for One Mean (σ unknown)</h3>
+      <p>Use when you estimate a population mean μ based on a sample mean x̄ with unknown σ.</p>
+      <p class="mini-heading">Formula:</p>
+      <pre>CI = x̄ ± t* · ( s / √n )</pre>
+      <p class="mini-heading">Where:</p>
+      <ul>
+        <li>x̄ = sample mean</li>
+        <li>s = sample standard deviation</li>
+        <li>n = sample size</li>
+        <li>t* = critical t-value (depends on confidence level and df = n − 1)</li>
+      </ul>
+      <p class="mini-heading">Conditions:</p>
+      <ul>
+        <li>Random sample</li>
+        <li>Population approx normal OR sample size n ≥ about 30</li>
+      </ul>
+      <p class="mini-heading">Interpretation example:</p>
+      <p>“We are 95% confident that the true mean time students study per day is between A and B hours.”</p>
+
+      <h3>1.2 CI for One Proportion</h3>
+      <p>Used to estimate a population proportion p (for example, proportion who prefer online classes).</p>
+      <p class="mini-heading">Formula:</p>
+      <pre>CI = p̂ ± z* · √( p̂(1 − p̂) / n )</pre>
+      <p class="mini-heading">Where:</p>
+      <ul>
+        <li>p̂ = x / n = sample proportion</li>
+        <li>z* = critical z-value (1.645 for 90%, 1.96 for 95%, 2.576 for 99%)</li>
+      </ul>
+      <p class="mini-heading">Conditions:</p>
+      <ul>
+        <li>Random sample</li>
+        <li>n p̂ ≥ 10 and n(1 − p̂) ≥ 10 (enough successes and failures)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="tag">Part 1</div>
+      <h2>2. One-Sample Hypothesis Tests</h2>
+
+      <h3>2.1 Test for a Mean</h3>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>t = ( x̄ − μ₀ ) / ( s / √n )</pre>
+      <p class="mini-heading">Hypotheses examples:</p>
+      <ul>
+        <li>Right-tailed: H₀: μ = μ₀, Hₐ: μ &gt; μ₀</li>
+        <li>Left-tailed: H₀: μ = μ₀, Hₐ: μ &lt; μ₀</li>
+        <li>Two-tailed: H₀: μ = μ₀, Hₐ: μ ≠ μ₀</li>
+      </ul>
+      <p class="mini-heading">Decision:</p>
+      <ul>
+        <li>If p-value ≤ α → reject H₀</li>
+        <li>If p-value &gt; α → fail to reject H₀</li>
+      </ul>
+
+      <h3>2.2 Test for a Proportion</h3>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>z = ( p̂ − p₀ ) / √( p₀(1 − p₀) / n )</pre>
+      <p>Note: For the test, we use p₀ (from H₀) inside the square root, not p̂.</p>
+    </div>
+
+    <div class="card">
+      <div class="tag">Part 1</div>
+      <h2>3. Two-Sample Procedures</h2>
+
+      <h3>3.1 Two Independent Means</h3>
+      <p>Compare average values from two different groups (for example, group A vs group B).</p>
+      <p class="mini-heading">Standard error:</p>
+      <pre>SE = √( s₁² / n₁ + s₂² / n₂ )</pre>
+      <p class="mini-heading">CI for μ₁ − μ₂:</p>
+      <pre>CI = ( x̄₁ − x̄₂ ) ± t* · SE</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>t = ( (x̄₁ − x̄₂) − 0 ) / SE</pre>
+
+      <h3>3.2 Two Proportions</h3>
+      <p>Compare proportions from two groups (for example, support for a policy in city 1 vs city 2).</p>
+      <p class="mini-heading">Pooled p (for tests):</p>
+      <pre>p pooled = ( x₁ + x₂ ) / ( n₁ + n₂ )</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>z = ( p̂₁ − p̂₂ )
+    / √( p pooled(1 − p pooled)(1/n₁ + 1/n₂) )</pre>
+      <p class="mini-heading">CI for p₁ − p₂ (no pooling):</p>
+      <pre>CI = ( p̂₁ − p̂₂ )
+   ± z* · √( p̂₁(1 − p̂₁)/n₁ + p̂₂(1 − p̂₂)/n₂ )</pre>
+    </div>
+
+    <div class="card">
+      <div class="tag">Part 1</div>
+      <h2>4. Matched Pairs (Paired Data)</h2>
+      <p>Use when data come in pairs: same people before/after, or naturally paired units.</p>
+      <p class="mini-heading">Step 1: Define differences</p>
+      <pre>d = after − before</pre>
+      <p class="mini-heading">Compute:</p>
+      <ul>
+        <li>d̄ = mean of the d values</li>
+        <li>s_d = standard deviation of the d values</li>
+        <li>n = number of pairs</li>
+      </ul>
+      <p class="mini-heading">CI for mean difference μ_d:</p>
+      <pre>CI = d̄ ± t* · ( s_d / √n )</pre>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>t = d̄ / ( s_d / √n )</pre>
+    </div>
+
+    <div class="card">
+      <div class="tag">Part 1</div>
+      <h2>5. ANOVA (Analysis of Variance)</h2>
+      <p>Use ANOVA when comparing the means of 3 or more groups.</p>
+      <p class="mini-heading">Hypotheses:</p>
+      <ul>
+        <li>H₀: μ₁ = μ₂ = μ₃ = ... (all group means are equal)</li>
+        <li>Hₐ: at least one μ is different</li>
+      </ul>
+      <p class="mini-heading">Test statistic:</p>
+      <pre>F = MS_between / MS_within</pre>
+      <p>If F is large and p-value &lt; α, reject H₀ → not all means are equal.</p>
+      <p>ANOVA tells you that “not all are equal” but does not say which specific groups differ.</p>
+    </div>
+
+    <div class="card">
+      <div class="tag">Part 1</div>
+      <h2>6. Chi-Square Tests</h2>
+
+      <h3>6.1 Chi-Square Goodness of Fit (one variable)</h3>
+      <p>Check whether a categorical variable follows a claimed distribution.</p>
+      <p class="mini-heading">Statistic:</p>
+      <pre>χ² = Σ (O − E)² / E</pre>
+      <p>Where O = observed count, E = expected count.</p>
+      <p class="mini-heading">df:</p>
+      <pre>df = k − 1   (k = number of categories)</pre>
+
+      <h3>6.2 Chi-Square Test of Independence (two-way table)</h3>
+      <p>Check whether two categorical variables are associated.</p>
+      <p class="mini-heading">Expected count in cell (i, j):</p>
+      <pre>Eᵢⱼ = ( row totalᵢ × column totalⱼ ) / grand total</pre>
+      <p class="mini-heading">Statistic:</p>
+      <pre>χ² = Σ (Oᵢⱼ − Eᵢⱼ)² / Eᵢⱼ</pre>
+      <p class="mini-heading">df:</p>
+      <pre>df = (r − 1)(c − 1)</pre>
+    </div>
+
+    <!-- PART 2: CONDENSED STUDY GUIDE -->
+    <div class="card">
+      <div class="tag">Part 2 · Condensed Guide</div>
+      <h2>7. Condensed Concept Guide</h2>
+      <ul>
+        <li><strong>CI:</strong> estimate a parameter with a range.</li>
+        <li><strong>Hypothesis test:</strong> test a claim (H₀ vs Hₐ) using a test statistic and p-value.</li>
+        <li><strong>Two-sample vs matched pairs:</strong>
+          <ul>
+            <li>Two-sample → different groups</li>
+            <li>Matched pairs → same individuals twice / paired data</li>
+          </ul>
+        </li>
+        <li><strong>ANOVA:</strong> 3+ means, numeric outcome.</li>
+        <li><strong>Chi-square:</strong> counts in categories.</li>
+      </ul>
+    </div>
+
+    <!-- PART 3: CHEAT SHEET -->
+    <div class="cheat">
+      <div class="tag" style="background:#1e293b;color:#e5edff;border:none;">Part 3 · Cheat Sheet</div>
+      <h2>8. One-Page Cheat Sheet</h2>
+      <pre>One mean (t):
+  CI: x̄ ± t* · ( s / √n )
+  t : ( x̄ − μ₀ ) / ( s / √n )
+
+One proportion (z):
+  CI: p̂ ± z* · √( p̂(1 − p̂) / n )
+  z : ( p̂ − p₀ ) / √( p₀(1 − p₀) / n )
+
+Two independent means:
+  SE = √( s₁²/n₁ + s₂²/n₂ )
+  CI = ( x̄₁ − x̄₂ ) ± t* · SE
+
+Two proportions:
+  p pooled = ( x₁ + x₂ ) / ( n₁ + n₂ )
+  z = ( p̂₁ − p̂₂ ) / √( p pooled(1 − p pooled)(1/n₁ + 1/n₂) )
+
+Matched pairs:
+  d = after − before
+  CI: d̄ ± t* · ( s_d / √n )
+  t : d̄ / ( s_d / √n )
+
+ANOVA:
+  F = MS_between / MS_within
+
+Chi-square:
+  χ² = Σ (O − E)² / E</pre>
+
+      <h3>8.1 Which Test Do I Use?</h3>
+      <ul>
+        <li>One mean → 1-sample t</li>
+        <li>One proportion → 1-sample z for p</li>
+        <li>Two means (independent) → 2-sample t</li>
+        <li>Two proportions → 2-proportion z</li>
+        <li>Same individuals twice → matched pairs t</li>
+        <li>3 or more means → ANOVA</li>
+        <li>Counts, 1 categorical variable → chi-square GOF</li>
+        <li>Counts, 2 categorical variables → chi-square independence</li>
+      </ul>
+    </div>
+
+    <!-- PART 4: MINI QUIZZES -->
+    <div class="card">
+      <div class="tag">Part 4 · Mini Quizzes</div>
+      <h2>9. Mini Quizzes (Try First, Then Open Answers)</h2>
+
+      <h3>Quiz A – CI and 1-Sample Tests</h3>
+      <ol>
+        <li>When do we use a t-interval instead of a z-interval for means?</li>
+        <li>A 95% CI for μ is (10.2, 14.8). Does this support H₀: μ = 15? Why or why not?</li>
+        <li>For Ha: p &gt; 0.4, is the test right-tailed, left-tailed, or two-tailed?</li>
+      </ol>
+
+      <h3>Quiz B – Two-Sample vs Matched Pairs</h3>
+      <ol>
+        <li>Two different classes use two different teaching methods. Which test: 2-sample t or matched pairs t?</li>
+        <li>The same students take a pre-test and post-test. Which procedure?</li>
+        <li>In a 2-proportion test, when do we use the pooled proportion p pooled?</li>
+      </ol>
+
+      <h3>Quiz C – ANOVA</h3>
+      <ol>
+        <li>Write H₀ and Hₐ for comparing 4 population means with ANOVA.</li>
+        <li>If F is small and the p-value is 0.42 at α = 0.05, what do you conclude?</li>
+        <li>Does ANOVA tell you exactly which groups differ?</li>
+      </ol>
+
+      <h3>Quiz D – Chi-Square</h3>
+      <ol>
+        <li>In a chi-square test, do we use raw (non-count) data or counts in categories?</li>
+        <li>What is χ² if O = E for every category?</li>
+        <li>What are the degrees of freedom for a 3 × 4 contingency table?</li>
+      </ol>
+
+      <details>
+        <summary>Show Mini Quiz Answers</summary>
+        <h4>Answers – Quiz A</h4>
+        <ol>
+          <li>Use t when σ is unknown (typical case) and the population is normal or n is large.</li>
+          <li>No, it contradicts H₀ because 15 is outside the CI (10.2, 14.8).</li>
+          <li>Right-tailed (Ha: p &gt; 0.4).</li>
+        </ol>
+
+        <h4>Answers – Quiz B</h4>
+        <ol>
+          <li>Two independent groups → 2-sample t test.</li>
+          <li>Same students twice → matched pairs t test.</li>
+          <li>We pool p when we are doing a hypothesis test with H₀: p₁ = p₂.</li>
+        </ol>
+
+        <h4>Answers – Quiz C</h4>
+        <ol>
+          <li>H₀: μ₁ = μ₂ = μ₃ = μ₄; Hₐ: at least one μ differs.</li>
+          <li>p = 0.42 &gt; 0.05 → fail to reject H₀; not enough evidence of a difference.</li>
+          <li>No; it only says not all means are equal.</li>
+        </ol>
+
+        <h4>Answers – Quiz D</h4>
+        <ol>
+          <li>Counts in categories.</li>
+          <li>χ² = 0.</li>
+          <li>df = (3 − 1)(4 − 1) = 2 × 3 = 6.</li>
+        </ol>
+      </details>
+    </div>
+
+    <!-- PART 5: PRACTICE EXAM -->
+    <div class="card">
+      <div class="tag">Part 5 · Practice Exam</div>
+      <h2>10. Practice Exam (Mixed Topics)</h2>
+      <p>Try these like a real exam before looking at the answer key.</p>
+      <ol>
+        <li>
+          <strong>CI for Mean:</strong><br>
+          A random sample of 25 students has mean study time x̄ = 3.4 hours with s = 1.2 hours. Construct a 95% CI for μ.
+        </li>
+        <li>
+          <strong>Test for Mean:</strong><br>
+          Using the data from (1), test H₀: μ = 3 vs Hₐ: μ &gt; 3 at α = 0.05. State conclusion.
+        </li>
+        <li>
+          <strong>CI for Proportion:</strong><br>
+          In a survey of 200 people, 54 say they prefer online classes. Construct a 90% CI for the true proportion p.
+        </li>
+        <li>
+          <strong>Two-Sample t Test:</strong><br>
+          Group A: n₁ = 16, x̄₁ = 78, s₁ = 10.<br>
+          Group B: n₂ = 20, x̄₂ = 70, s₂ = 8.<br>
+          Test H₀: μ₁ = μ₂ vs Hₐ: μ₁ &gt; μ₂ at α = 0.05.
+        </li>
+        <li>
+          <strong>Two-Proportion z Test:</strong><br>
+          City 1: 30 of 100 people support a policy.<br>
+          City 2: 45 of 120 people support it.<br>
+          Test H₀: p₁ = p₂ vs Hₐ: p₁ ≠ p₂ at α = 0.05.
+        </li>
+        <li>
+          <strong>Matched Pairs:</strong><br>
+          Ten patients have blood pressure measured before and after a program. Differences (after − before) have d̄ = −5.2, s_d = 4.0.<br>
+          At α = 0.01, test whether the program reduces blood pressure (Hₐ: μ_d &lt; 0).
+        </li>
+        <li>
+          <strong>ANOVA (Concept):</strong><br>
+          An ANOVA test with 3 groups gives F = 5.8 and p-value = 0.006 at α = 0.05. What do you conclude?
+        </li>
+        <li>
+          <strong>Chi-Square GOF:</strong><br>
+          A die is rolled 120 times; counts are 16, 17, 18, 25, 22, 22 for faces 1–6. Test H₀: the die is fair at α = 0.05.
+        </li>
+        <li>
+          <strong>Chi-Square Independence (Concept):</strong><br>
+          You test whether smoking status (smoker/non-smoker) is independent of exercise level (low/medium/high). How do you compute the expected counts in the 2 × 3 table?
+        </li>
+        <li>
+          <strong>Which Test?</strong><br>
+          For each situation, name the procedure:
+          <ul>
+            <li>(a) Compare average GPA of business majors vs non-business majors.</li>
+            <li>(b) Test if color preference (red/blue/green) is the same for men and women.</li>
+            <li>(c) Test if average sleep hours changed for the same students before and after a new schedule.</li>
+            <li>(d) Test if the true proportion of students who own a car differs from 0.60.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <!-- PART 6: PRACTICE EXAM ANSWER KEY -->
+    <div class="card">
+      <div class="tag">Part 6 · Answer Key</div>
+      <h2>11. Practice Exam – Answer Sketches</h2>
+      <ol>
+        <li>
+          n = 25, x̄ = 3.4, s = 1.2, 95% CI.<br>
+          df = 24, t* ≈ 2.064.<br>
+          SE = 1.2 / √25 = 0.24.<br>
+          Margin = 2.064 × 0.24 ≈ 0.50.<br>
+          CI ≈ (2.90, 3.90).
+        </li>
+        <li>
+          t = (3.4 − 3) / 0.24 ≈ 1.67, df = 24.<br>
+          p-value ≈ 0.055 (right-tailed).<br>
+          Since p &gt; 0.05, fail to reject H₀; not enough evidence μ &gt; 3.
+        </li>
+        <li>
+          p̂ = 54 / 200 = 0.27.<br>
+          z* (90%) ≈ 1.645.<br>
+          SE = √(0.27 × 0.73 / 200) ≈ 0.0314.<br>
+          Margin ≈ 1.645 × 0.0314 ≈ 0.052.<br>
+          CI ≈ (0.218, 0.322).
+        </li>
+        <li>
+          Difference: x̄₁ − x̄₂ = 78 − 70 = 8.<br>
+          SE = √(100/16 + 64/20) = √(6.25 + 3.2) = √9.45 ≈ 3.074.<br>
+          t ≈ 8 / 3.074 ≈ 2.60 → p ≈ 0.01 (right-tailed).<br>
+          Reject H₀; evidence μ₁ &gt; μ₂.
+        </li>
+        <li>
+          p̂₁ = 0.30, p̂₂ = 0.375.<br>
+          p pooled = 75 / 220 ≈ 0.341.<br>
+          SE ≈ √(0.341 × 0.659 × (1/100 + 1/120)) ≈ 0.0642.<br>
+          z ≈ (0.30 − 0.375) / 0.0642 ≈ −1.17.<br>
+          Two-tailed p ≈ 0.24 → fail to reject H₀.
+        </li>
+        <li>
+          d̄ = −5.2, s_d = 4.0, n = 10.<br>
+          SE = 4 / √10 ≈ 1.265.<br>
+          t = −5.2 / 1.265 ≈ −4.11, df = 9.<br>
+          Very small p-value &lt; 0.01 → reject H₀; strong evidence the program reduces BP.
+        </li>
+        <li>
+          p-value = 0.006 &lt; 0.05 → reject H₀.<br>
+          Conclusion: At least one group’s mean is different from the others.
+        </li>
+        <li>
+          Expected count per face if fair: 120 / 6 = 20.<br>
+          χ² = Σ (O − E)² / E = (16−20)²/20 + ... + (22−20)²/20 ≈ 3.10.<br>
+          df = 5; critical χ² at α = 0.05 is ≈ 11.07.<br>
+          Since 3.10 &lt; 11.07 → fail to reject H₀; no evidence die is unfair.
+        </li>
+        <li>
+          For each cell: Eᵢⱼ = (row totalᵢ × column totalⱼ) / grand total.<br>
+          Then plug all Eᵢⱼ into χ² = Σ (Oᵢⱼ − Eᵢⱼ)² / Eᵢⱼ.
+        </li>
+        <li>
+          (a) Two-sample t test for means.<br>
+          (b) Chi-square test of independence.<br>
+          (c) Matched pairs t test.<br>
+          (d) One-sample z test for a proportion.
+        </li>
+      </ol>
+    </div>
+
+    <!-- PART 7: NIGHT-BEFORE TIPS -->
+    <div class="card tips">
+      <div class="tag" style="background:#bbf7d0;color:#14532d;border:none;">Part 7 · Night-Before Tips</div>
+      <h2>12. Night-Before Exam Tips</h2>
+      <ul>
+        <li>Focus on <strong>recognizing which test to use</strong> from the wording.</li>
+        <li>Always write: H₀, Hₐ, test name, test statistic, p-value, conclusion.</li>
+        <li>Mistakes to avoid:
+          <ul>
+            <li>Using p̂ instead of p₀ in the 1-proportion test standard error.</li>
+            <li>Forgetting to define d = after − before in matched pairs.</li>
+            <li>Mixing up 2-sample vs matched pairs.</li>
+            <li>Forgetting degrees of freedom for chi-square.</li>
+          </ul>
+        </li>
+        <li>Final 10–15 minutes: scan the cheat sheet and “Which test do I use?” section.</li>
+      </ul>
+    </div>
+
+    <p style="text-align:center; font-size:12px; color:#6b7280; margin-top:32px;">
+      End of MATH 11 Study Pack · Good luck! 🌟
+    </p>
+  </div>
+</body>
+</html>
